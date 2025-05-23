@@ -1,0 +1,6 @@
+{
+  "name": "AI Chat Interface - Aura Enhanced",
+  "description": "Aura, an advanced AI assistant specializing in Roblox/Luau development, general coding, learning help, and creative tasks. Features multi-turn conversations, text-to-image generation, and web search capabilities powered by Gemini. Built with React and Tailwind CSS.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

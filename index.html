@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en" class="dark"> <!-- Default to dark, will be managed by JS -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chat Interface - Aura</title>
+  <link rel="preconnect" href="https://esm.sh" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            // Black & White Neumorphic/Glassmorphic Theme
+            // Dark Mode (Primary)
+            dm_bg: '#1A1A1A', // Off-black background
+            dm_panel: '#2C2C2C', // Slightly lighter panel background
+            dm_panel_deep: '#202020', // Deeper panel background for contrast
+            dm_text_primary: '#E0E0E0', // Light grey for primary text
+            dm_text_secondary: '#A0A0A0', // Medium grey for secondary text
+            dm_border: '#383838', // Subtle borders
+            dm_highlight_soft: '#3A3A3A', // Soft highlight for neumorphic effect
+            dm_shadow_soft: '#101010',   // Soft shadow for neumorphic effect
+            dm_accent: '#68D391', // A subtle green for accents like send button, active states
+
+            // Light Mode
+            lm_bg: '#F0F0F0', // Light grey background
+            lm_panel: '#FFFFFF', // White panel background
+            lm_panel_deep: '#E5E5E5', // Slightly darker panel for depth
+            lm_text_primary: '#2C2C2C', // Dark grey for primary text
+            lm_text_secondary: '#555555', // Medium dark grey for secondary text
+            lm_border: '#DCDCDC', // Subtle borders
+            lm_highlight_soft: '#FFFFFF', // Soft highlight for neumorphic effect (often white)
+            lm_shadow_soft: '#BEBEBE',   // Soft shadow for neumorphic effect
+            lm_accent: '#48BB78', // A subtle green for accents
+
+            // Generic (can be adjusted by dark/light mode overrides if needed)
+            error_bg: '#5A2525', // Dark red for error bg in dark mode
+            error_text: '#F5C5C5', // Light red for error text in dark mode
+            lm_error_bg: '#FFF5F5',
+            lm_error_text: '#C53030',
+          },
+          boxShadow: {
+            // Neumorphic shadows for dark mode
+            'neumorphic-dm-DEFAULT': '5px 5px 10px #101010, -5px -5px 10px #303030',
+            'neumorphic-dm-inset': 'inset 5px 5px 10px #101010, inset -5px -5px 10px #303030',
+            'neumorphic-dm-sm': '3px 3px 6px #101010, -3px -3px 6px #303030',
+            'neumorphic-dm-sm-inset': 'inset 3px 3px 6px #101010, inset -3px -3px 6px #303030',
+            
+            // Neumorphic shadows for light mode
+            'neumorphic-lm-DEFAULT': '5px 5px 10px #BEBEBE, -5px -5px 10px #FFFFFF',
+            'neumorphic-lm-inset': 'inset 5px 5px 10px #BEBEBE, inset -5px -5px 10px #FFFFFF',
+            'neumorphic-lm-sm': '3px 3px 6px #BEBEBE, -3px -3px 6px #FFFFFF',
+            'neumorphic-lm-sm-inset': 'inset 3px 3px 6px #BEBEBE, inset -3px -3px 6px #FFFFFF',
+
+            'glass-dm': '0 4px 30px rgba(0, 0, 0, 0.1)', // For potential glassmorphic layers
+            'glass-lm': '0 4px 30px rgba(0, 0, 0, 0.05)',
+          },
+          backdropBlur: {
+            'xs': '2px',
+          }
+        },
+      },
+       plugins: [
+        // require('@tailwindcss/forms')({ // Commented out: 'require' is not available in browser for CDN setup
+        //   strategy: 'class', 
+        // }),
+        // require('tailwind-scrollbar') // This plugin also cannot be used with 'require' in this setup
+      ],
+    }
+  </script>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/client": "https://esm.sh/react-dom@^19.1.0/client",
+    "react/jsx-runtime": "https://esm.sh/react@^19.1.0/jsx-runtime",
+    "@google/genai": "https://esm.sh/@google/genai@^1.0.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/"
+  }
+}
+</script>
+  <script type="module" src="/index.tsx"></script>
+</head>
+<body class="bg-lm_bg dark:bg-dm_bg text-lm_text_primary dark:text-dm_text_primary transition-colors duration-300">
+  <div id="root"></div>
+</body>
+</html>
+<link rel="stylesheet" href="index.css">
+<script src="index.tsx" type="module"></script>
